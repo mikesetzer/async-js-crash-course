@@ -42,13 +42,24 @@ const createPost = (post) => {
 //     .catch(err => console.log(err));
 
 // Async/Await
-const init = async() => {
-    await createPost({ title: 'Post 3', body: 'This is post three' });
+// const init = async() => {
+//     await createPost({ title: 'Post 3', body: 'This is post three' });
 
-    getPosts();
+//     getPosts();
+// }
+
+// init();
+
+// Async / Await / Fetch
+const fetchUsers = async() => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+
+    const data = await res.json();
+
+    console.log(data);
 }
 
-init();
+fetchUsers();
 
 // Promise.all
 // const promise1 = Promise.resolve('Hello World');
